@@ -46,7 +46,7 @@ export default function Hero() {
   }, [displayText, isDeleting, currentWordIndex]);
 
   return (
-    <section className="relative overflow-hidden pt-72 pb-20">
+    <section className="relative overflow-hidden pt-40 pb-20">
       {/* Background now handled by parent wrapper in App.tsx */}
 
       {/* Solar System - Bubbles orbiting around the title */}
