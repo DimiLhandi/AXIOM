@@ -1,0 +1,485 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme CSS Variables */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #1d1d1f;
+  --text-primary: #ffffff;
+  --text-secondary: #86868b;
+  --text-muted: #a1a1a6;
+  --border-color: #424245;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+html.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --text-primary: #1d1d1f;
+  --text-secondary: #515154;
+  --text-muted: #6e6e73;
+  --border-color: #d2d2d7;
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --overlay-bg: rgba(255, 255, 255, 0.5);
+}
+
+@layer base {
+
+  /* Global body styles - Apple inspired */
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Headings - Bold, clean Apple style */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+
+  /* Paragraphs - Readable with good spacing */
+  p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+}
+
+/* Light mode specific overrides */
+html.light .bg-black {
+  background-color: var(--bg-primary) !important;
+}
+
+html.light .text-white {
+  color: var(--text-primary) !important;
+}
+
+html.light .text-\[#86868b\] {
+  color: var(--text-secondary) !important;
+}
+
+html.light .text-\[#a1a1a6\] {
+  color: var(--text-muted) !important;
+}
+
+html.light .border-\[#424245\] {
+  border-color: var(--border-color) !important;
+}
+
+html.light .bg-white\/5 {
+  background-color: var(--card-bg) !important;
+}
+
+html.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .border-white\/10 {
+  border-color: var(--card-border) !important;
+}
+
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html.light .bg-black\/50 {
+  background-color: var(--overlay-bg) !important;
+}
+
+html.light .bg-black\/90 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html.light .bg-black\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light .bg-\[#1d1d1f\] {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Keep button text white in light mode */
+html.light .bg-primary,
+html.light .hover\:bg-primary-light:hover {
+  color: #ffffff !important;
+}
+
+html.light button.bg-primary {
+  color: #ffffff !important;
+}
+
+/* Light mode scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #c7c7cc;
+}
+
+/* Light mode scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #c7c7cc;
+}
+
+/* Custom Scrollbar - Subtle Apple style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424245;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #86868b;
+}
+
+/* Apple-style utilities */
+.text-gray-apple {
+  color: #86868b;
+}
+
+.bg-card {
+  background-color: #1d1d1f;
+}
+
+.border-subtle {
+  border-color: #424245;
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glass effect - subtle */
+.glass {
+  @apply backdrop-blur-xl bg-black/80 border border-white/10;
+}
+
+/* Text gradient */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400;
+}
+
+/* Organic blob animation */
+@keyframes blob {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
+  }
+}
+
+.animate-blob {
+  animation: blob 12s ease-in-out infinite;
+}
+
+.animate-blob-fast {
+  animation: blob 6s ease-in-out infinite;
+}
+
+.animate-blob-faster {
+  animation: blob 4s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-slow {
+  0% {
+    transform: translateX(-33.33%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee-slow 8s linear infinite;
+}
+
+.animate-marquee-loop {
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 10s linear infinite;
+}
+
+/* Infinite scroll - seamless loop from right to left */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 12s linear infinite;
+}
+
+/* Scroll right - logos move from left to right */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.mask-linear-gradient {
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+/* Apple-style hover effect for cards */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Logo Spin Animation - Full Y-axis rotation */
+@keyframes spin-3d-y {
+  0% {
+    transform: perspective(200px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(200px) rotateY(360deg);
+  }
+}
+
+/* 3D Logo Gentle Wobble - Subtle multi-axis rotation */
+@keyframes spin-3d-wobble {
+
+  0%,
+  100% {
+    transform: perspective(200px) rotateY(0deg) rotateX(0deg);
+  }
+
+  25% {
+    transform: perspective(200px) rotateY(90deg) rotateX(5deg);
+  }
+
+  50% {
+    transform: perspective(200px) rotateY(180deg) rotateX(0deg);
+  }
+
+  75% {
+    transform: perspective(200px) rotateY(270deg) rotateX(-5deg);
+  }
+}
+
+/* Slow elegant spin */
+.animate-spin-3d {
+  animation: spin-3d-y 8s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Medium speed spin with wobble */
+.animate-spin-3d-wobble {
+  animation: spin-3d-wobble 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Fast spin variation */
+.animate-spin-3d-fast {
+  animation: spin-3d-y 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Different speed variations based on seed */
+.animate-spin-3d-1 {
+  animation: spin-3d-y 7s linear infinite;
+}
+
+.animate-spin-3d-2 {
+  animation: spin-3d-y 9s linear infinite;
+}
+
+.animate-spin-3d-3 {
+  animation: spin-3d-y 6s linear infinite;
+}
+
+.animate-spin-3d-4 {
+  animation: spin-3d-y 8s linear infinite;
+}
+
+.animate-spin-3d-5 {
+  animation: spin-3d-y 5s linear infinite;
+}
+
+.animate-spin-3d-6 {
+  animation: spin-3d-y 10s linear infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-spin-3d,
+  .animate-spin-3d-wobble,
+  .animate-spin-3d-fast,
+  .animate-spin-3d-1,
+  .animate-spin-3d-2,
+  .animate-spin-3d-3,
+  .animate-spin-3d-4,
+  .animate-spin-3d-5,
+  .animate-spin-3d-6 {
+    animation: none;
+  }
+}
+
+/* Solar System Orbital Animation - Elliptical orbit */
+@keyframes bubble-orbit {
+  0% {
+    transform: rotate(0deg) translateX(var(--orbit-rx)) translateY(0) scaleY(calc(var(--orbit-ry) / var(--orbit-rx)));
+  }
+
+  25% {
+    transform: rotate(90deg) translateX(var(--orbit-rx)) translateY(0) scaleY(calc(var(--orbit-ry) / var(--orbit-rx)));
+  }
+
+  50% {
+    transform: rotate(180deg) translateX(var(--orbit-rx)) translateY(0) scaleY(calc(var(--orbit-ry) / var(--orbit-rx)));
+  }
+
+  75% {
+    transform: rotate(270deg) translateX(var(--orbit-rx)) translateY(0) scaleY(calc(var(--orbit-ry) / var(--orbit-rx)));
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(var(--orbit-rx)) translateY(0) scaleY(calc(var(--orbit-ry) / var(--orbit-rx)));
+  }
+}
+
+/* Orbit path subtle animation */
+@keyframes orbit-path-glow {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-orbit-path {
+  animation: orbit-path-glow 4s ease-in-out infinite;
+}
+
+/* Animated Border Snake Effect */
+@keyframes border-snake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-snake {
+  animation: border-snake 3s linear infinite;
+}
+
+/* Light mode support for animated border card */
+html.light .bg-black\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Respect reduced motion for orbits */
+@media (prefers-reduced-motion: reduce) {
+
+  [style*="animation: bubble-orbit"],
+  .animate-orbit-path,
+  .animate-border-snake {
+    animation: none !important;
+  }
+}
