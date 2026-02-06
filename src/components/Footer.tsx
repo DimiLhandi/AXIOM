@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
           <div>
-            <img src="/logo_axiom.png" alt="Axiom IA" className="h-8 w-auto mb-4" />
+            <img src="/logo_axiom_a.png" alt="Axiom IA" className="h-20 w-auto mb-4" />
             <p className={`text-sm max-w-xs ${isLight ? 'text-gray-600' : 'text-[#86868b]'}`}>
               L'agence pionnière dans l'optimisation pour les moteurs de recherche génératifs.
             </p>
@@ -43,15 +43,26 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={`border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 ${isLight ? 'border-gray-200' : 'border-[#424245]'
+        <div className={`border-t pt-8 flex flex-col gap-6 ${isLight ? 'border-gray-200' : 'border-[#424245]'
           }`}>
-          <p className={`text-sm ${isLight ? 'text-gray-600' : 'text-[#86868b]'}`}>
-            © 2025 Axiom IA. Tous droits réservés.
-          </p>
-          <div className={`flex gap-6 text-sm ${isLight ? 'text-gray-600' : 'text-[#86868b]'}`}>
-            <a href="#" className={`transition-colors ${isLight ? 'hover:text-black' : 'hover:text-white'}`}>Mentions légales</a>
-            <a href="#" className={`transition-colors ${isLight ? 'hover:text-black' : 'hover:text-white'}`}>Confidentialité</a>
-            <a href="#" className={`transition-colors ${isLight ? 'hover:text-black' : 'hover:text-white'}`}>CGV</a>
+          {/* Copyright and legal row */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className={`text-sm ${isLight ? 'text-gray-600' : 'text-[#86868b]'}`}>
+              © 2026 Axiom IA. Tous droits réservés.
+            </p>
+            <div className={`flex gap-6 text-sm ${isLight ? 'text-gray-600' : 'text-[#86868b]'}`}>
+              <a href="#" className={`transition-colors ${isLight ? 'hover:text-black' : 'hover:text-white'}`}>Mentions légales</a>
+            </div>
+          </div>
+
+          {/* AXIOM IA branding - centered, full width, purple color, massive size */}
+          <div className="w-full text-center pt-8 overflow-hidden">
+            <h2
+              className="font-bold tracking-tighter uppercase text-primary whitespace-nowrap"
+              style={{ fontSize: 'clamp(4rem, 18vw, 20rem)' }}
+            >
+              AXIOM IA
+            </h2>
           </div>
         </div>
       </div>
