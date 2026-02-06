@@ -67,7 +67,7 @@ export default function Benefits() {
             viewport={{ once: true }}
             className="text-lg text-[#86868b] max-w-2xl mx-auto leading-relaxed"
           >
-            Des résultats mesurables et une approche centrée sur la performance. Découvrez pourquoi plus de 200 e-commerces font confiance à Axiom IA pour leur stratégie de contenu et leur visibilité organique.
+            Des résultats mesurables et une approche centrée sur la performance. Découvrez comment Axiom IA transforme votre stratégie de contenu et booste votre visibilité organique.
           </motion.p>
         </div>
 
