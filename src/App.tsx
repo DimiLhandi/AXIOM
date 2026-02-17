@@ -5,7 +5,7 @@ import Solution from './components/Solution';
 import Timeline from './components/Timeline';
 import Services from './components/Services';
 import Benefits from './components/Benefits';
-import Pricing from './components/Pricing';
+
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PixelParticles from './components/PixelParticles';
@@ -60,7 +60,7 @@ function App() {
           </div>
         </div>
 
-        <Pricing />
+
         <FAQ />
 
         {/* Final CTA Section */}
