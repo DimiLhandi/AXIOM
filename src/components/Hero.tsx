@@ -121,67 +121,6 @@ export default function Hero() {
           Soyez trouvé sur Google, compris par les IA et recommandé là où les décisions se prennent.
         </motion.p>
 
-        {/* Pricing Card - integrated into hero */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="max-w-4xl mx-auto relative mb-12"
-        >
-          {/* Animated border glow container */}
-          <div className="absolute -inset-[2px] rounded-3xl overflow-hidden">
-            <div
-              className="absolute inset-[-100%] animate-border-snake"
-              style={{
-                background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 80deg, #7734b8 100deg, #a855f7 130deg, #c084fc 140deg, #a855f7 150deg, #7734b8 170deg, transparent 190deg, transparent 360deg)',
-              }}
-            />
-            <div
-              className="absolute inset-[-100%] animate-border-snake blur-sm opacity-70"
-              style={{
-                background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 80deg, #7734b8 100deg, #a855f7 130deg, #c084fc 140deg, #a855f7 150deg, #7734b8 170deg, transparent 190deg, transparent 360deg)',
-              }}
-            />
-            <div
-              className="absolute inset-[-100%] animate-border-snake blur-lg opacity-50"
-              style={{
-                background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 80deg, #7734b8 100deg, #a855f7 130deg, #c084fc 140deg, #a855f7 150deg, #7734b8 170deg, transparent 190deg, transparent 360deg)',
-              }}
-            />
-          </div>
-
-          {/* Inner card content */}
-          <div className="relative p-10 rounded-3xl bg-black/95 backdrop-blur-md border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4 text-center">Solution Personnalisée</h3>
-            <p className="text-[#86868b] mb-10 leading-relaxed max-w-3xl mx-auto text-center">
-              Nous analysons en profondeur votre catalogue produit, votre positionnement actuel et vos objectifs business pour construire une infrastructure de contenu parfaitement adaptée à votre marque et votre marché cible.
-            </p>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {pricingFeatures.map((item, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 ${activeFeatureIndex === i
-                      ? 'bg-primary shadow-[0_0_20px_rgba(119,52,184,0.6)]'
-                      : 'bg-primary/20'
-                      }`}
-                  >
-                    <Check className="text-white" size={16} />
-                  </div>
-                  <h4 className="text-white font-semibold">{item.title}</h4>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex justify-center">
-              <a href="https://calendly.com/ossmane-b1/appel-axiom-ia-infrastructure-ia?month=2026-02" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-primary hover:bg-primary-light text-white rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(119,52,184,0.4)] hover:shadow-[0_0_30px_rgba(119,52,184,0.6)]">
-                Discuter avec nous
-              </a>
-            </div>
-          </div>
-        </motion.div>
-
-
 
         {/* Hero Video - Theme aware with animated border glow */}
         <motion.div
@@ -255,6 +194,67 @@ export default function Hero() {
                   className="h-8 w-auto mx-8 flex-shrink-0 opacity-60"
                 />
               ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Solution Personnalisée Card - below compatible logos */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto relative mt-16"
+        >
+          {/* Animated border glow container */}
+          <div className="absolute -inset-[2px] rounded-3xl overflow-hidden">
+            <div
+              className="absolute inset-[-100%] animate-border-snake"
+              style={{
+                background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 80deg, #7734b8 100deg, #a855f7 130deg, #c084fc 140deg, #a855f7 150deg, #7734b8 170deg, transparent 190deg, transparent 360deg)',
+              }}
+            />
+            <div
+              className="absolute inset-[-100%] animate-border-snake blur-sm opacity-70"
+              style={{
+                background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 80deg, #7734b8 100deg, #a855f7 130deg, #c084fc 140deg, #a855f7 150deg, #7734b8 170deg, transparent 190deg, transparent 360deg)',
+              }}
+            />
+            <div
+              className="absolute inset-[-100%] animate-border-snake blur-lg opacity-50"
+              style={{
+                background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 80deg, #7734b8 100deg, #a855f7 130deg, #c084fc 140deg, #a855f7 150deg, #7734b8 170deg, transparent 190deg, transparent 360deg)',
+              }}
+            />
+          </div>
+
+          {/* Inner card content */}
+          <div className="relative p-10 rounded-3xl bg-black/95 backdrop-blur-md border border-white/10">
+            <h3 className="text-2xl font-bold text-white mb-4 text-center">Solution Personnalisée</h3>
+            <p className="text-[#86868b] mb-10 leading-relaxed max-w-3xl mx-auto text-center">
+              Nous analysons en profondeur votre catalogue produit, votre positionnement actuel et vos objectifs business pour construire une infrastructure de contenu parfaitement adaptée à votre marque et votre marché cible.
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {pricingFeatures.map((item, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div
+                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 ${activeFeatureIndex === i
+                      ? 'bg-primary shadow-[0_0_20px_rgba(119,52,184,0.6)]'
+                      : 'bg-primary/20'
+                      }`}
+                  >
+                    <Check className="text-white" size={16} />
+                  </div>
+                  <h4 className="text-white font-semibold">{item.title}</h4>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center">
+              <a href="https://calendly.com/ossmane-b1/appel-axiom-ia-infrastructure-ia?month=2026-02" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-primary hover:bg-primary-light text-white rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(119,52,184,0.4)] hover:shadow-[0_0_30px_rgba(119,52,184,0.6)]">
+                Discuter avec nous
+              </a>
             </div>
           </div>
         </motion.div>
